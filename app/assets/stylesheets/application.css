@@ -13,3 +13,112 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Lato", sans-serif;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    background-color: #fff;
+    box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
+    position: relative;
+    padding: 0px 70px;
+    background-color: #fff;
+  }
+
+  .navbar-logo {
+    color: #348fff;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 0px 20px;
+  }
+
+  .menu{
+    display: flex;
+  }
+
+  .navbar-links {
+    list-style-type: none;
+    display: flex;
+  }
+  
+  .navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: #444;
+    padding: 20px 20px;
+    font-weight: 500;
+    font-size: 18px;
+    transition: 0.4s all;
+  }
+  
+  .navbar-links li.navbar-dropdown {
+    position: relative;
+  }
+
+  .navbar-links li a:hover {
+    color: #349aff;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 90vh;
+    background-size: cover;
+  }
+  
+  .header-inner {
+    text-align: center;
+    color: #348fff;
+  }
+  
+  .header-inner h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: 130px;
+  }
+
+  .search-bar{
+    margin: 30px 0 30px 0;
+    width: 40%;
+    border: 2px solid #b8b8b8;
+    padding: 5px;
+    font-size: 16px;
+    height: 40px;
+    font-family: "Lato", cursive;
+    border-radius: 10px;
+    outline: none;
+    color: #b8b8b8;
+  }
+  
+  .search-bar:focus{
+    color: #2f2f2f;
+  }
+
+  .heading-articles{
+    margin-top: 40px;
+  }
+  
+  .articles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+    color: black;
+    box-shadow: none;
+  }
+
+  .article{
+    flex-basis: calc(33.33% - 10px);
+    margin-bottom: 25px; 
+  }

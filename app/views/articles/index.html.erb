@@ -1,13 +1,17 @@
-<h1>Articles</h1>
-
-<%= form_with(url: articles_path, method: :get, data: { controller: "search-form", turbo_frame: "articles", turbo_action: "advance" }) do |form| %>
-  <%= form.label :query, "Search article:" %>
-  <%= form.text_field :query, autocomplete: :off, data: { action: "input->search-form#search" } %>
-<% end %>
-
-<div>
-  <% @articles.present? %>
-    <% @articles.each do |article| %>
-      <%= article.title %>
+<header class="header">
+  <div class="header-inner">
+    <h1>SimpleSearch</h1>
+    <%= form_with(url: articles_path, method: :get, data: { controller: "search-form", turbo_frame: "articles", turbo_action: "advance" }) do |form| %>
+      <%= form.text_field :query, autocomplete: :off, data: { action: "input->search-form#search" }, class:'search-bar', placeholder:'Search articles...' %>
     <% end %>
-</div>
+    <h2 class='heading-articles'> List of articles </h2>
+    <div class='articles'>
+      <% @articles.present? %>
+        <% @articles.each do |article| %>
+          <div class='article'>
+            <%= article.title %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+</header>

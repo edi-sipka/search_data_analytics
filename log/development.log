@@ -1342,3 +1342,1891 @@ Processing by SearchesController#index as HTML
 Completed 200 OK in 20ms (Views: 17.4ms | ActiveRecord: 0.6ms | Allocations: 4155)
 
 
+Started GET "/" for ::1 at 2023-04-11 17:07:14 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 4419)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 9050)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 17.0ms | Allocations: 19955)
+
+
+  
+ActionView::Template::Error (require_self can only be called once per source file):
+     6:     <%= csrf_meta_tags %>
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:     <%= javascript_importmap_tags %>
+    11:   </head>
+    12: 
+  
+app/assets/stylesheets/application.css:29
+app/views/layouts/application.html.erb:9
+Started GET "/" for ::1 at 2023-04-11 17:09:01 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1888)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 4520)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.8ms | Allocations: 5946)
+
+
+  
+ActionView::Template::Error (require_self can only be called once per source file):
+     6:     <%= csrf_meta_tags %>
+     7:     <%= csp_meta_tag %>
+     8:     
+     9:     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:     <%= javascript_importmap_tags %>
+    11:   </head>
+    12: 
+  
+app/assets/stylesheets/application.css:29
+app/views/layouts/application.html.erb:9
+Started GET "/" for ::1 at 2023-04-11 17:09:02 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1609)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 3969)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.0ms | Allocations: 4908)
+
+
+  
+ActionView::Template::Error (require_self can only be called once per source file):
+     6:     <%= csrf_meta_tags %>
+     7:     <%= csp_meta_tag %>
+     8:     
+     9:     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:     <%= javascript_importmap_tags %>
+    11:   </head>
+    12: 
+  
+app/assets/stylesheets/application.css:29
+app/views/layouts/application.html.erb:9
+Started GET "/" for ::1 at 2023-04-11 17:10:08 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1609)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 244)
+  Rendered layout layouts/application.html.erb (Duration: 56.3ms | Allocations: 41467)
+Completed 200 OK in 61ms (Views: 56.3ms | ActiveRecord: 0.9ms | Allocations: 42476)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:10:09 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 4036)
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.7ms | Allocations: 4985)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:10:10 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4041)
+Completed 200 OK in 14ms (Views: 8.7ms | ActiveRecord: 0.8ms | Allocations: 4989)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:10:10 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 4037)
+Completed 200 OK in 12ms (Views: 8.2ms | ActiveRecord: 0.6ms | Allocations: 4985)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:10:11 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 4058)
+Completed 200 OK in 13ms (Views: 9.3ms | ActiveRecord: 0.5ms | Allocations: 5019)
+
+
+Started GET "/articles?query=Green+Living" for ::1 at 2023-04-11 17:10:17 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"Green Living"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (2.0ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  [1m[36mSearch Create (1.0ms)[0m  [1m[32mINSERT INTO "searches" ("query", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["query", "Green Living"], ["user_id", 1], ["created_at", "2023-04-11 15:10:17.078963"], ["updated_at", "2023-04-11 15:10:17.078963"]]
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%Green Living%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1313)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3739)
+Completed 200 OK in 66ms (Views: 4.0ms | ActiveRecord: 11.2ms | Allocations: 24786)
+
+
+Started GET "/articles?query=Green+Living" for ::1 at 2023-04-11 17:10:33 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"Green Living"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%Green Living%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1372)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3812)
+Completed 200 OK in 13ms (Views: 7.4ms | ActiveRecord: 1.2ms | Allocations: 5551)
+
+
+Started GET "/articles?query=Green+Living" for ::1 at 2023-04-11 17:10:34 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"Green Living"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%Green Living%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1373)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 3831)
+Completed 200 OK in 15ms (Views: 9.1ms | ActiveRecord: 1.1ms | Allocations: 5569)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:10:35 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 4049)
+Completed 200 OK in 16ms (Views: 11.6ms | ActiveRecord: 0.6ms | Allocations: 4999)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:10:36 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4035)
+Completed 200 OK in 13ms (Views: 8.8ms | ActiveRecord: 0.7ms | Allocations: 4985)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:10:37 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 4056)
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 0.6ms | Allocations: 5007)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:10:38 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 4021)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.7ms | Allocations: 4971)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:10:38 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4036)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.6ms | Allocations: 4986)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:12:52 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1902)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 228)
+  Rendered layout layouts/application.html.erb (Duration: 38.9ms | Allocations: 6263)
+Completed 200 OK in 46ms (Views: 40.6ms | ActiveRecord: 0.7ms | Allocations: 7695)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:12:53 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 4035)
+Completed 200 OK in 15ms (Views: 9.8ms | ActiveRecord: 0.8ms | Allocations: 4984)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:12:53 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 4041)
+Completed 200 OK in 16ms (Views: 11.2ms | ActiveRecord: 0.7ms | Allocations: 4989)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:12:54 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4038)
+Completed 200 OK in 13ms (Views: 7.1ms | ActiveRecord: 2.4ms | Allocations: 4986)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:12:54 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 4035)
+Completed 200 OK in 15ms (Views: 9.5ms | ActiveRecord: 0.8ms | Allocations: 4983)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:12:55 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (9.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 16.2ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 4060)
+Completed 200 OK in 32ms (Views: 17.4ms | ActiveRecord: 10.5ms | Allocations: 5009)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:14:20 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:8
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 5449)
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 0.7ms | Allocations: 6397)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:15:56 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1899)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 228)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 4863)
+Completed 200 OK in 24ms (Views: 17.0ms | ActiveRecord: 0.8ms | Allocations: 6295)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:15:57 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 4042)
+Completed 200 OK in 15ms (Views: 9.8ms | ActiveRecord: 1.7ms | Allocations: 4992)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:15:57 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 4027)
+Completed 200 OK in 14ms (Views: 9.9ms | ActiveRecord: 0.8ms | Allocations: 4975)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:15:58 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 4039)
+Completed 200 OK in 14ms (Views: 10.1ms | ActiveRecord: 0.8ms | Allocations: 4987)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:15:59 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 4050)
+Completed 200 OK in 15ms (Views: 9.9ms | ActiveRecord: 0.7ms | Allocations: 4998)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:16:00 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 4035)
+Completed 200 OK in 17ms (Views: 11.0ms | ActiveRecord: 2.0ms | Allocations: 4983)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:16:37 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1896)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 228)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4842)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.4ms | Allocations: 6274)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:16:38 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 4050)
+Completed 200 OK in 15ms (Views: 10.4ms | ActiveRecord: 0.7ms | Allocations: 4999)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:16:38 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 4050)
+Completed 200 OK in 19ms (Views: 15.1ms | ActiveRecord: 1.0ms | Allocations: 4999)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:16:39 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 4044)
+Completed 200 OK in 15ms (Views: 9.8ms | ActiveRecord: 1.3ms | Allocations: 4993)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:16:39 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 4058)
+Completed 200 OK in 31ms (Views: 27.7ms | ActiveRecord: 0.7ms | Allocations: 5006)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:16:51 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1898)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 228)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4865)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.4ms | Allocations: 6297)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:16:52 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 4036)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.3ms | Allocations: 4986)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:16:52 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 4054)
+Completed 200 OK in 17ms (Views: 10.9ms | ActiveRecord: 0.8ms | Allocations: 5002)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:16:53 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4024)
+Completed 200 OK in 14ms (Views: 8.7ms | ActiveRecord: 0.8ms | Allocations: 4972)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:17:24 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 5465)
+Completed 200 OK in 26ms (Views: 17.3ms | ActiveRecord: 1.1ms | Allocations: 6413)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:17:25 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (2.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 4029)
+Completed 200 OK in 17ms (Views: 10.5ms | ActiveRecord: 3.0ms | Allocations: 4980)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:18:25 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1223)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1312)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.8ms | Allocations: 2725)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <header class="header">
+      <div class="header-inner">
+        <h1>SimpleSearch</h1>
+        <%= form_with(url: articles_path, method: :get, data: { controller: "search-form", turbo_frame: "articles", turbo_action: "advance" }) do |form| %>
+          <%= form.text_field :query, autocomplete: :off, data: { action: "input->search-form#search" }, class:'search-bar', placeholder:'Search article or type a URL' %>
+        <% end %>
+        <h2> List of articles </h2>
+       <div class='articles'>
+        <% @articles.present? %>
+          <% @articles.each do |article| %>
+            <%= article.title, class:'article' %>
+           <% end %>
+        </div>
+        </form>
+      </div>
+    </header>
+
+):
+1:    <header class="header">
+2:          <div class="header-inner">
+3:            <h1>SimpleSearch</h1>
+4:            <%= form_with(url: articles_path, method: :get, data: { controller: "search-form", turbo_frame: "articles", turbo_action: "advance" }) do |form| %>
+5:              <%= form.text_field :query, autocomplete: :off, data: { action: "input->search-form#search" }, class:'search-bar', placeholder:'Search article or type a URL' %>
+6:            <% end %>
+7:            <h2> List of articles </h2>
+8:           <div class='articles'>
+9:            <% @articles.present? %>
+10:              <% @articles.each do |article| %>
+11:                <%= article.title, class:'article' %>
+12:               <% end %>
+13:            </div>
+14:            </form>
+15:          </div>
+16:        </header>
+  
+app/views/articles/index.html.erb:11: syntax error, unexpected label, expecting '='
+app/views/articles/index.html.erb:11: syntax error, unexpected label, expecting '='
+app/views/articles/index.html.erb:11: syntax error, unexpected label, expecting '='
+app/views/articles/index.html.erb:11: syntax error, unexpected label, expecting '='
+app/views/articles/index.html.erb:11: syntax error, unexpected label, expecting '='
+app/views/articles/index.html.erb:11: syntax error, unexpected label, expecting '='
+Started GET "/" for ::1 at 2023-04-11 17:19:10 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1912)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 228)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 6314)
+Completed 200 OK in 30ms (Views: 24.8ms | ActiveRecord: 0.9ms | Allocations: 7746)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:19:11 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4041)
+Completed 200 OK in 22ms (Views: 9.8ms | ActiveRecord: 1.1ms | Allocations: 4989)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:19:12 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 4032)
+Completed 200 OK in 15ms (Views: 10.6ms | ActiveRecord: 0.7ms | Allocations: 4979)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:19:12 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 4035)
+Completed 200 OK in 16ms (Views: 10.9ms | ActiveRecord: 0.9ms | Allocations: 4982)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:19:13 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 4041)
+Completed 200 OK in 13ms (Views: 8.4ms | ActiveRecord: 0.7ms | Allocations: 4988)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:19:13 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4038)
+Completed 200 OK in 13ms (Views: 7.6ms | ActiveRecord: 0.7ms | Allocations: 4985)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:19:14 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 4044)
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 0.7ms | Allocations: 4991)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:19:34 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 5453)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.5ms | Allocations: 6400)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:19:34 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4029)
+Completed 200 OK in 13ms (Views: 8.8ms | ActiveRecord: 0.6ms | Allocations: 4976)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:19:49 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 5467)
+Completed 200 OK in 16ms (Views: 10.3ms | ActiveRecord: 0.4ms | Allocations: 6415)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:20:13 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 20.7ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 5489)
+Completed 200 OK in 32ms (Views: 29.7ms | ActiveRecord: 0.5ms | Allocations: 6437)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:21:18 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1922)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 228)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 6299)
+Completed 200 OK in 31ms (Views: 22.1ms | ActiveRecord: 1.0ms | Allocations: 7731)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:21:19 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 4044)
+Completed 200 OK in 14ms (Views: 8.9ms | ActiveRecord: 0.9ms | Allocations: 4993)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:21:20 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 4035)
+Completed 200 OK in 15ms (Views: 9.5ms | ActiveRecord: 0.9ms | Allocations: 4983)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:21:25 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 5463)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.4ms | Allocations: 6411)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:21:27 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4026)
+Completed 200 OK in 17ms (Views: 8.0ms | ActiveRecord: 0.8ms | Allocations: 4974)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:25:09 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 5468)
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.5ms | Allocations: 6416)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:25:20 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 5487)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 0.4ms | Allocations: 6435)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:26:04 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1920)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 228)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 4883)
+Completed 200 OK in 11ms (Views: 7.3ms | ActiveRecord: 0.4ms | Allocations: 6316)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:26:05 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 4030)
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.5ms | Allocations: 4979)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:26:06 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4059)
+Completed 200 OK in 16ms (Views: 9.4ms | ActiveRecord: 1.8ms | Allocations: 5007)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:26:07 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 4039)
+Completed 200 OK in 16ms (Views: 9.5ms | ActiveRecord: 1.3ms | Allocations: 4987)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:26:44 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 5477)
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.5ms | Allocations: 6425)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:26:46 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 4044)
+Completed 200 OK in 16ms (Views: 11.2ms | ActiveRecord: 1.6ms | Allocations: 4992)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:27:11 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 5475)
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 0.5ms | Allocations: 6423)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:27:12 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 4029)
+Completed 200 OK in 16ms (Views: 9.4ms | ActiveRecord: 0.8ms | Allocations: 4977)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:27:13 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 4038)
+Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 0.4ms | Allocations: 4986)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:27:13 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 4017)
+Completed 200 OK in 16ms (Views: 12.3ms | ActiveRecord: 0.5ms | Allocations: 4966)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:27:24 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 5479)
+Completed 200 OK in 13ms (Views: 10.6ms | ActiveRecord: 0.5ms | Allocations: 6427)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:27:25 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 4052)
+Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 0.6ms | Allocations: 5001)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:28:04 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 5479)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.4ms | Allocations: 6427)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:28:05 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4021)
+Completed 200 OK in 15ms (Views: 10.1ms | ActiveRecord: 0.7ms | Allocations: 4969)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:28:11 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 5471)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.4ms | Allocations: 6419)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:28:11 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 4038)
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 0.6ms | Allocations: 4986)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:28:12 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (3.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 4041)
+Completed 200 OK in 17ms (Views: 10.1ms | ActiveRecord: 3.3ms | Allocations: 4989)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:28:12 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 4038)
+Completed 200 OK in 10ms (Views: 6.2ms | ActiveRecord: 0.5ms | Allocations: 4986)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:29:05 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 5470)
+Completed 200 OK in 28ms (Views: 18.7ms | ActiveRecord: 0.8ms | Allocations: 6418)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:29:07 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 4076)
+Completed 200 OK in 23ms (Views: 9.4ms | ActiveRecord: 1.1ms | Allocations: 5025)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:29:07 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 4060)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.5ms | Allocations: 5008)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:29:08 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 4042)
+Completed 200 OK in 15ms (Views: 10.3ms | ActiveRecord: 0.8ms | Allocations: 4991)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:29:08 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 4036)
+Completed 200 OK in 14ms (Views: 10.3ms | ActiveRecord: 0.6ms | Allocations: 4984)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:29:08 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1606)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 4019)
+Completed 200 OK in 18ms (Views: 12.2ms | ActiveRecord: 0.9ms | Allocations: 4967)
+
+
+Started GET "/articles?query=Urban" for ::1 at 2023-04-11 17:29:33 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"Urban"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.8ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mSearch Update (38.6ms)[0m  [1m[33mUPDATE "searches" SET "query" = $1, "updated_at" = $2 WHERE "searches"."id" = $3[0m  [["query", "Urban"], ["updated_at", "2023-04-11 15:29:33.678083"], ["id", 3]]
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%Urban%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1372)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3791)
+Completed 200 OK in 59ms (Views: 5.8ms | ActiveRecord: 41.9ms | Allocations: 7602)
+
+
+Started GET "/articles?query=Urban" for ::1 at 2023-04-11 17:29:43 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"Urban"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%Urban%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1372)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 3806)
+Completed 200 OK in 18ms (Views: 8.2ms | ActiveRecord: 1.6ms | Allocations: 5543)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:29:44 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 4029)
+Completed 200 OK in 13ms (Views: 10.1ms | ActiveRecord: 0.5ms | Allocations: 4979)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:29:57 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 4101)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.6ms | Allocations: 5049)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:29:58 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 4041)
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 0.4ms | Allocations: 4989)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:29:59 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4044)
+Completed 200 OK in 14ms (Views: 8.5ms | ActiveRecord: 1.1ms | Allocations: 4992)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:29:59 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 4039)
+Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 0.7ms | Allocations: 4988)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:30:00 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 4042)
+Completed 200 OK in 16ms (Views: 11.5ms | ActiveRecord: 0.7ms | Allocations: 4990)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:30:01 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4048)
+Completed 200 OK in 15ms (Views: 10.1ms | ActiveRecord: 0.8ms | Allocations: 4997)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:30:06 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 4081)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.3ms | Allocations: 5029)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:30:07 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 4051)
+Completed 200 OK in 15ms (Views: 9.5ms | ActiveRecord: 1.1ms | Allocations: 4999)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:30:16 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 5458)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.4ms | Allocations: 6406)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:30:17 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 4026)
+Completed 200 OK in 13ms (Views: 9.8ms | ActiveRecord: 0.7ms | Allocations: 4974)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:30:17 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 4044)
+Completed 200 OK in 16ms (Views: 10.5ms | ActiveRecord: 1.3ms | Allocations: 4992)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:30:17 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4050)
+Completed 200 OK in 13ms (Views: 8.9ms | ActiveRecord: 0.7ms | Allocations: 4998)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:30:32 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 5434)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.3ms | Allocations: 6382)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:30:39 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4116)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.3ms | Allocations: 5065)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:30:56 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 5477)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.5ms | Allocations: 6425)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:31:03 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 4108)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.5ms | Allocations: 5057)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:31:10 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 5460)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.5ms | Allocations: 6408)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:31:37 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 4033)
+Completed 200 OK in 18ms (Views: 11.8ms | ActiveRecord: 0.9ms | Allocations: 4981)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:32:03 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 4020)
+Completed 200 OK in 20ms (Views: 14.3ms | ActiveRecord: 0.8ms | Allocations: 4968)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:32:48 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 5478)
+Completed 200 OK in 21ms (Views: 16.8ms | ActiveRecord: 0.8ms | Allocations: 6426)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:39:08 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1925)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 220)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 6274)
+Completed 200 OK in 98ms (Views: 25.3ms | ActiveRecord: 11.3ms | Allocations: 10668)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:39:09 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (7.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 4026)
+Completed 200 OK in 20ms (Views: 8.3ms | ActiveRecord: 7.8ms | Allocations: 4975)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:39:09 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 4058)
+Completed 200 OK in 28ms (Views: 10.9ms | ActiveRecord: 1.4ms | Allocations: 5007)
+
+
+Started GET "/articles?query=Protecting+Data" for ::1 at 2023-04-11 17:39:31 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"Protecting Data"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.7ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mSearch Update (0.9ms)[0m  [1m[33mUPDATE "searches" SET "query" = $1, "updated_at" = $2 WHERE "searches"."id" = $3[0m  [["query", "Protecting Data"], ["updated_at", "2023-04-11 15:39:31.879324"], ["id", 3]]
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%Protecting Data%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1373)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 3830)
+Completed 200 OK in 30ms (Views: 10.6ms | ActiveRecord: 6.8ms | Allocations: 7480)
+
+
+Started GET "/articles?query=Protecting+Data" for ::1 at 2023-04-11 17:39:53 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"Protecting Data"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%Protecting Data%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1373)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 3810)
+Completed 200 OK in 19ms (Views: 8.5ms | ActiveRecord: 2.1ms | Allocations: 5548)
+
+
+Started GET "/articles?query=Protecting+Data" for ::1 at 2023-04-11 17:39:54 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"Protecting Data"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%Protecting Data%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1372)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3801)
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 0.8ms | Allocations: 5538)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:39:55 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4024)
+Completed 200 OK in 14ms (Views: 9.9ms | ActiveRecord: 0.8ms | Allocations: 4974)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:40:13 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 5456)
+Completed 200 OK in 23ms (Views: 17.6ms | ActiveRecord: 0.8ms | Allocations: 6404)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:40:14 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 4017)
+Completed 200 OK in 15ms (Views: 10.6ms | ActiveRecord: 0.8ms | Allocations: 4965)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:40:14 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4053)
+Completed 200 OK in 14ms (Views: 9.8ms | ActiveRecord: 0.6ms | Allocations: 5001)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:40:15 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4029)
+Completed 200 OK in 13ms (Views: 8.8ms | ActiveRecord: 0.6ms | Allocations: 4977)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:40:16 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 4035)
+Completed 200 OK in 13ms (Views: 9.4ms | ActiveRecord: 0.6ms | Allocations: 4983)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:40:16 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 4065)
+Completed 200 OK in 19ms (Views: 15.1ms | ActiveRecord: 0.7ms | Allocations: 5014)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:40:17 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 4037)
+Completed 200 OK in 17ms (Views: 12.2ms | ActiveRecord: 0.7ms | Allocations: 4985)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:40:17 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 4053)
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 0.5ms | Allocations: 5001)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:40:18 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1608)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4024)
+Completed 200 OK in 13ms (Views: 8.9ms | ActiveRecord: 0.6ms | Allocations: 4973)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:40:18 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4052)
+Completed 200 OK in 12ms (Views: 8.9ms | ActiveRecord: 0.5ms | Allocations: 5000)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:40:36 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2763)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 17491)
+Completed 200 OK in 25ms (Views: 9.4ms | ActiveRecord: 10.3ms | Allocations: 21775)
+
+
+Started GET "/" for ::1 at 2023-04-11 17:40:37 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1581)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 4044)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.4ms | Allocations: 4995)
+
+
+Started GET "/articles?query=Urban" for ::1 at 2023-04-11 17:40:41 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"Urban"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mSearch Update (0.5ms)[0m  [1m[33mUPDATE "searches" SET "query" = $1, "updated_at" = $2 WHERE "searches"."id" = $3[0m  [["query", "Urban"], ["updated_at", "2023-04-11 15:40:41.696500"], ["id", 3]]
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%Urban%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1297)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3743)
+Completed 200 OK in 29ms (Views: 6.0ms | ActiveRecord: 5.9ms | Allocations: 10885)
+
+
