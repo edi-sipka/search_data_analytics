@@ -8,5 +8,6 @@ class Search < ApplicationRecord
       .select('query, COUNT(*) as total')
       .order('total DESC')
   }
-  
+
+  scope :latest_search_for, -> (user) { where(user: user).order(created_at: :desc).first }
 end

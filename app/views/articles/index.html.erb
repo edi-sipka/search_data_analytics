@@ -6,12 +6,6 @@
     <% end %>
     <h2 class='heading-articles'> List of articles </h2>
     <div class='articles'>
-      <% @articles.present? %>
-        <% @articles.each do |article| %>
-          <div class='article'>
-            <%= article.title %>
-          </div>
-        <% end %>
-      </div>
+      <%= render "articles", articles: @articles %>
     </div>
 </header>

@@ -7021,3 +7021,2208 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.5ms | Allocations: 5005)
 
 
+Started GET "/" for ::1 at 2023-04-11 21:35:59 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1583)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 4054)
+Completed 200 OK in 65ms (Views: 13.6ms | ActiveRecord: 8.0ms | Allocations: 7948)
+
+
+Started GET "/articles?query=green" for ::1 at 2023-04-11 21:36:16 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"green"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.9ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  [1m[36mSearch Create (1.4ms)[0m  [1m[32mINSERT INTO "searches" ("query", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["query", "green"], ["user_id", 1], ["created_at", "2023-04-11 19:36:16.481004"], ["updated_at", "2023-04-11 19:36:16.481004"]]
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%green%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1373)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 3858)
+Completed 200 OK in 27ms (Views: 7.8ms | ActiveRecord: 5.6ms | Allocations: 7509)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 21:36:17 +0200
+Processing by SearchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (1.3ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" GROUP BY "searches"."query" ORDER BY total DESC LIMIT $1[0m  [["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [7 times] (Duration: 0.3ms | Allocations: 140)
+  Rendered searches/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 922)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 3422)
+Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 1.3ms | Allocations: 3731)
+
+
+Started GET "/articles?query=gree+liv" for ::1 at 2023-04-11 21:36:27 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"gree liv"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mSearch Update (1.0ms)[0m  [1m[33mUPDATE "searches" SET "query" = $1, "updated_at" = $2 WHERE "searches"."id" = $3[0m  [["query", "gree liv"], ["updated_at", "2023-04-11 19:36:27.739758"], ["id", 7]]
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%gree liv%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1353)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3862)
+Completed 200 OK in 23ms (Views: 8.3ms | ActiveRecord: 3.5ms | Allocations: 7544)
+
+
+Started GET "/articles" for ::1 at 2023-04-11 21:36:38 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1581)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 4072)
+Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 0.8ms | Allocations: 5020)
+
+
+Started GET "/articles?query=nest" for ::1 at 2023-04-11 21:36:43 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"nest"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.6ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (5.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%nest%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1353)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 3875)
+Completed 200 OK in 22ms (Views: 9.5ms | ActiveRecord: 6.1ms | Allocations: 5614)
+
+
+Started GET "/articles" for ::1 at 2023-04-11 21:36:58 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1582)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 4089)
+Completed 200 OK in 17ms (Views: 13.4ms | ActiveRecord: 1.0ms | Allocations: 5038)
+
+
+Started GET "/articles?query=dsfkmkmfds" for ::1 at 2023-04-11 21:37:02 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"dsfkmkmfds"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  [1m[36mSearch Create (0.8ms)[0m  [1m[32mINSERT INTO "searches" ("query", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["query", "dsfkmkmfds"], ["user_id", 1], ["created_at", "2023-04-11 19:37:02.977624"], ["updated_at", "2023-04-11 19:37:02.977624"]]
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%dsfkmkmfds%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1354)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 3832)
+Completed 200 OK in 22ms (Views: 9.0ms | ActiveRecord: 3.0ms | Allocations: 7482)
+
+
+Started GET "/articles" for ::1 at 2023-04-11 21:37:09 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1581)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4093)
+Completed 200 OK in 12ms (Views: 8.3ms | ActiveRecord: 0.7ms | Allocations: 5041)
+
+
+Started GET "/articles?query=green+living" for ::1 at 2023-04-11 21:37:21 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"green living"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.7ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  [1m[36mSearch Create (1.0ms)[0m  [1m[32mINSERT INTO "searches" ("query", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["query", "green living"], ["user_id", 1], ["created_at", "2023-04-11 19:37:21.031748"], ["updated_at", "2023-04-11 19:37:21.031748"]]
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%green living%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1373)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 3858)
+Completed 200 OK in 27ms (Views: 10.5ms | ActiveRecord: 3.6ms | Allocations: 7507)
+
+
+Started GET "/" for ::1 at 2023-04-11 21:37:24 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1581)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 4079)
+Completed 200 OK in 16ms (Views: 10.7ms | ActiveRecord: 0.9ms | Allocations: 5030)
+
+
+Started GET "/" for ::1 at 2023-04-11 21:42:11 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [18 times] (Duration: 1.6ms | Allocations: 412)
+  Rendered articles/_articles.html.erb (Duration: 6.9ms | Allocations: 1658)
+  Rendered articles/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 2792)
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 5806)
+Completed 200 OK in 26ms (Views: 19.7ms | ActiveRecord: 0.9ms | Allocations: 7238)
+
+
+Started GET "/articles?query=green" for ::1 at 2023-04-11 21:42:16 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"green"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.7ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%green%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [1 times] (Duration: 0.2ms | Allocations: 26)
+  Rendered articles/_articles.html.erb (Duration: 2.9ms | Allocations: 824)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 4.4ms | Allocations: 1637)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 5.9ms | Allocations: 1872)
+Completed 200 OK in 16ms (Views: 6.9ms | ActiveRecord: 1.6ms | Allocations: 3764)
+
+
+Started GET "/articles?query=green+liv" for ::1 at 2023-04-11 21:43:08 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"green liv"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.6ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%green liv%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [1 times] (Duration: 0.2ms | Allocations: 26)
+  Rendered articles/_articles.html.erb (Duration: 2.8ms | Allocations: 824)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 3.6ms | Allocations: 1637)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 3.8ms | Allocations: 1732)
+Completed 200 OK in 13ms (Views: 3.8ms | ActiveRecord: 1.6ms | Allocations: 3438)
+
+
+Started GET "/articles?query=" for ::1 at 2023-04-11 21:43:13 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [18 times] (Duration: 0.7ms | Allocations: 256)
+  Rendered articles/_articles.html.erb (Duration: 3.9ms | Allocations: 1223)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 5.1ms | Allocations: 2036)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 5.3ms | Allocations: 2131)
+Completed 200 OK in 11ms (Views: 5.6ms | ActiveRecord: 0.8ms | Allocations: 3046)
+
+
+Started GET "/articles?query=article" for ::1 at 2023-04-11 21:43:15 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"article"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mSearch Update (0.9ms)[0m  [1m[33mUPDATE "searches" SET "query" = $1, "updated_at" = $2 WHERE "searches"."id" = $3[0m  [["query", "article"], ["updated_at", "2023-04-11 19:43:15.756687"], ["id", 9]]
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%article%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 24)
+  Rendered articles/_articles.html.erb (Duration: 4.1ms | Allocations: 775)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 5.2ms | Allocations: 1589)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 5.4ms | Allocations: 1684)
+Completed 200 OK in 29ms (Views: 5.6ms | ActiveRecord: 4.1ms | Allocations: 5300)
+
+
+Started GET "/articles?query=article+" for ::1 at 2023-04-11 21:43:18 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"article "}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mSearch Update (0.8ms)[0m  [1m[33mUPDATE "searches" SET "query" = $1, "updated_at" = $2 WHERE "searches"."id" = $3[0m  [["query", "article "], ["updated_at", "2023-04-11 19:43:18.817655"], ["id", 9]]
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%article %') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 4.7ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 5.7ms | Allocations: 1573)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 6.0ms | Allocations: 1668)
+Completed 200 OK in 21ms (Views: 6.2ms | ActiveRecord: 2.9ms | Allocations: 5284)
+
+
+Started GET "/articles?query=article+controller" for ::1 at 2023-04-11 21:43:21 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"article controller"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.6ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mSearch Update (1.2ms)[0m  [1m[33mUPDATE "searches" SET "query" = $1, "updated_at" = $2 WHERE "searches"."id" = $3[0m  [["query", "article controller"], ["updated_at", "2023-04-11 19:43:21.367541"], ["id", 9]]
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%article controller%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 3.1ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 4.7ms | Allocations: 1573)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 5.0ms | Allocations: 1668)
+Completed 200 OK in 37ms (Views: 5.3ms | ActiveRecord: 3.9ms | Allocations: 5284)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 21:43:24 +0200
+Processing by SearchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.8ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" GROUP BY "searches"."query" ORDER BY total DESC LIMIT $1[0m  [["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [9 times] (Duration: 1.8ms | Allocations: 309)
+  Rendered searches/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1310)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 89)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 3932)
+Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 0.8ms | Allocations: 4546)
+
+
+Started GET "/articles?query=article+controller" for ::1 at 2023-04-11 21:43:34 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"article controller"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%article controller%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 2.8ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 4.6ms | Allocations: 1572)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.8ms | Allocations: 1667)
+Completed 200 OK in 11ms (Views: 5.0ms | ActiveRecord: 1.4ms | Allocations: 3375)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 21:43:36 +0200
+Processing by SearchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.8ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" GROUP BY "searches"."query" ORDER BY total DESC LIMIT $1[0m  [["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [9 times] (Duration: 0.5ms | Allocations: 177)
+  Rendered searches/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 975)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 3484)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.8ms | Allocations: 3794)
+
+
+Started GET "/articles?query=article+controller" for ::1 at 2023-04-11 21:43:46 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"article controller"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%article controller%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 3.0ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 4.1ms | Allocations: 1573)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.3ms | Allocations: 1668)
+Completed 200 OK in 12ms (Views: 4.3ms | ActiveRecord: 1.5ms | Allocations: 3375)
+
+
+Started GET "/articles?query=green" for ::1 at 2023-04-11 21:43:49 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"green"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mSearch Update (0.8ms)[0m  [1m[33mUPDATE "searches" SET "query" = $1, "updated_at" = $2 WHERE "searches"."id" = $3[0m  [["query", "green"], ["updated_at", "2023-04-11 19:43:49.905325"], ["id", 9]]
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%green%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [1 times] (Duration: 0.2ms | Allocations: 26)
+  Rendered articles/_articles.html.erb (Duration: 2.8ms | Allocations: 824)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 3.8ms | Allocations: 1637)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.0ms | Allocations: 1732)
+Completed 200 OK in 20ms (Views: 4.2ms | ActiveRecord: 3.2ms | Allocations: 5351)
+
+
+Started GET "/" for ::1 at 2023-04-11 21:44:07 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [18 times] (Duration: 0.5ms | Allocations: 256)
+  Rendered articles/_articles.html.erb (Duration: 4.7ms | Allocations: 1223)
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2037)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 4540)
+Completed 200 OK in 15ms (Views: 11.5ms | ActiveRecord: 0.7ms | Allocations: 5488)
+
+
+Started GET "/articles?query=future" for ::1 at 2023-04-11 21:44:13 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"future"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  [1m[36mSearch Create (1.0ms)[0m  [1m[32mINSERT INTO "searches" ("query", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["query", "future"], ["user_id", 1], ["created_at", "2023-04-11 19:44:13.929352"], ["updated_at", "2023-04-11 19:44:13.929352"]]
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%future%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [2 times] (Duration: 0.2ms | Allocations: 39)
+  Rendered articles/_articles.html.erb (Duration: 3.1ms | Allocations: 848)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 4.3ms | Allocations: 1661)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.6ms | Allocations: 1756)
+Completed 200 OK in 22ms (Views: 4.9ms | ActiveRecord: 3.7ms | Allocations: 5372)
+
+
+Started GET "/articles?query=" for ::1 at 2023-04-11 21:44:43 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [18 times] (Duration: 0.6ms | Allocations: 256)
+  Rendered articles/_articles.html.erb (Duration: 9.9ms | Allocations: 1223)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 11.0ms | Allocations: 2036)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 11.2ms | Allocations: 2131)
+Completed 200 OK in 17ms (Views: 11.6ms | ActiveRecord: 0.8ms | Allocations: 3047)
+
+
+Started GET "/articles?query=test" for ::1 at 2023-04-11 21:44:47 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"test"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%test%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 2.6ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 3.8ms | Allocations: 1573)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.1ms | Allocations: 1668)
+Completed 200 OK in 14ms (Views: 4.3ms | ActiveRecord: 1.5ms | Allocations: 3374)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 21:44:50 +0200
+Processing by SearchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.9ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" GROUP BY "searches"."query" ORDER BY total DESC LIMIT $1[0m  [["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [10 times] (Duration: 0.4ms | Allocations: 194)
+  Rendered searches/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1002)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 3539)
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.9ms | Allocations: 3849)
+
+
+Started GET "/articles?query=testing" for ::1 at 2023-04-11 21:45:05 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"testing"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  [1m[36mSearch Create (0.8ms)[0m  [1m[32mINSERT INTO "searches" ("query", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["query", "testing"], ["user_id", 1], ["created_at", "2023-04-11 19:45:06.002573"], ["updated_at", "2023-04-11 19:45:06.002573"]]
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%testing%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 2.6ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 3.7ms | Allocations: 1573)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.4ms | Allocations: 1668)
+Completed 200 OK in 18ms (Views: 4.7ms | ActiveRecord: 3.4ms | Allocations: 5284)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 21:45:08 +0200
+Processing by SearchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.8ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" GROUP BY "searches"."query" ORDER BY total DESC LIMIT $1[0m  [["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [11 times] (Duration: 0.5ms | Allocations: 212)
+  Rendered searches/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1029)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 3539)
+Completed 200 OK in 17ms (Views: 11.8ms | ActiveRecord: 0.8ms | Allocations: 3849)
+
+
+Started GET "/articles?query=testing+the" for ::1 at 2023-04-11 21:45:13 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"testing the"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mSearch Update (0.7ms)[0m  [1m[33mUPDATE "searches" SET "query" = $1, "updated_at" = $2 WHERE "searches"."id" = $3[0m  [["query", "testing the"], ["updated_at", "2023-04-11 19:45:13.702760"], ["id", 11]]
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%testing the%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 2.8ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 3.9ms | Allocations: 1572)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.1ms | Allocations: 1667)
+Completed 200 OK in 20ms (Views: 4.2ms | ActiveRecord: 3.1ms | Allocations: 5282)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 21:45:16 +0200
+Processing by SearchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.8ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" GROUP BY "searches"."query" ORDER BY total DESC LIMIT $1[0m  [["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [11 times] (Duration: 0.4ms | Allocations: 212)
+  Rendered searches/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1029)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 3541)
+Completed 200 OK in 13ms (Views: 10.6ms | ActiveRecord: 0.8ms | Allocations: 3850)
+
+
+Started GET "/articles?query=testing+th+" for ::1 at 2023-04-11 21:45:25 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"testing th "}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.3ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mSearch Update (0.9ms)[0m  [1m[33mUPDATE "searches" SET "query" = $1, "updated_at" = $2 WHERE "searches"."id" = $3[0m  [["query", "testing th "], ["updated_at", "2023-04-11 19:45:25.699437"], ["id", 11]]
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%testing th %') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 2.6ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 3.7ms | Allocations: 1573)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 3.9ms | Allocations: 1668)
+Completed 200 OK in 19ms (Views: 4.5ms | ActiveRecord: 3.5ms | Allocations: 5284)
+
+
+Started GET "/articles?query=testing+th+hh" for ::1 at 2023-04-11 21:45:26 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"testing th hh"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mSearch Update (0.6ms)[0m  [1m[33mUPDATE "searches" SET "query" = $1, "updated_at" = $2 WHERE "searches"."id" = $3[0m  [["query", "testing th hh"], ["updated_at", "2023-04-11 19:45:26.902234"], ["id", 11]]
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%testing th hh%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 2.4ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 3.5ms | Allocations: 1573)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 5.0ms | Allocations: 1668)
+Completed 200 OK in 16ms (Views: 5.1ms | ActiveRecord: 2.6ms | Allocations: 5283)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 21:45:29 +0200
+Processing by SearchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.9ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" GROUP BY "searches"."query" ORDER BY total DESC LIMIT $1[0m  [["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [11 times] (Duration: 1.2ms | Allocations: 212)
+  Rendered searches/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1029)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 3536)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.9ms | Allocations: 3845)
+
+
+Started GET "/articles?query=tes+is+this" for ::1 at 2023-04-11 21:45:59 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"tes is this"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.6ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mSearch Update (0.6ms)[0m  [1m[33mUPDATE "searches" SET "query" = $1, "updated_at" = $2 WHERE "searches"."id" = $3[0m  [["query", "tes is this"], ["updated_at", "2023-04-11 19:45:59.612983"], ["id", 11]]
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%tes is this%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 6.5ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 7.5ms | Allocations: 1572)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 7.7ms | Allocations: 1667)
+Completed 200 OK in 21ms (Views: 7.8ms | ActiveRecord: 3.1ms | Allocations: 5283)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 21:46:01 +0200
+Processing by SearchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.8ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" GROUP BY "searches"."query" ORDER BY total DESC LIMIT $1[0m  [["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [11 times] (Duration: 0.5ms | Allocations: 212)
+  Rendered searches/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1029)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 3551)
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 0.8ms | Allocations: 3861)
+
+
+Started GET "/articles?query=testing+this+behaviour" for ::1 at 2023-04-11 21:46:14 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"testing this behaviour"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mSearch Update (0.7ms)[0m  [1m[33mUPDATE "searches" SET "query" = $1, "updated_at" = $2 WHERE "searches"."id" = $3[0m  [["query", "testing this behaviour"], ["updated_at", "2023-04-11 19:46:14.831327"], ["id", 11]]
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%testing this behaviour%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 2.5ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 3.6ms | Allocations: 1573)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 3.9ms | Allocations: 1668)
+Completed 200 OK in 20ms (Views: 4.1ms | ActiveRecord: 3.2ms | Allocations: 5285)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 21:46:16 +0200
+Processing by SearchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (1.1ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" GROUP BY "searches"."query" ORDER BY total DESC LIMIT $1[0m  [["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [11 times] (Duration: 0.6ms | Allocations: 213)
+  Rendered searches/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1030)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 3564)
+Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 1.1ms | Allocations: 3873)
+
+
+Started GET "/articles?query=" for ::1 at 2023-04-11 21:46:22 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [18 times] (Duration: 0.7ms | Allocations: 256)
+  Rendered articles/_articles.html.erb (Duration: 3.5ms | Allocations: 1223)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 4.6ms | Allocations: 2037)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.8ms | Allocations: 2132)
+Completed 200 OK in 9ms (Views: 5.2ms | ActiveRecord: 0.6ms | Allocations: 3047)
+
+
+Started GET "/articles?query=is+this+test" for ::1 at 2023-04-11 21:46:25 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"is this test"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mSearch Update (1.3ms)[0m  [1m[33mUPDATE "searches" SET "query" = $1, "updated_at" = $2 WHERE "searches"."id" = $3[0m  [["query", "is this test"], ["updated_at", "2023-04-11 19:46:25.072967"], ["id", 11]]
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%is this test%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 3.0ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 4.2ms | Allocations: 1572)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.4ms | Allocations: 1667)
+Completed 200 OK in 19ms (Views: 4.2ms | ActiveRecord: 3.9ms | Allocations: 5286)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 21:46:28 +0200
+Processing by SearchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.9ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" GROUP BY "searches"."query" ORDER BY total DESC LIMIT $1[0m  [["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [11 times] (Duration: 0.5ms | Allocations: 212)
+  Rendered searches/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1029)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 3527)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.9ms | Allocations: 3836)
+
+
+Started GET "/articles?query=is+this+test" for ::1 at 2023-04-11 21:48:08 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"is this test"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%is this test%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 32)
+  Rendered articles/_articles.html.erb (Duration: 1.3ms | Allocations: 1054)
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2637)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 231)
+  Rendered layout layouts/application.html.erb (Duration: 152.4ms | Allocations: 140315)
+Completed 200 OK in 178ms (Views: 153.0ms | ActiveRecord: 9.3ms | Allocations: 158311)
+
+
+Started GET "/articles?query=this+is+a+test" for ::1 at 2023-04-11 21:48:14 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"this is a test"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mSearch Update (0.7ms)[0m  [1m[33mUPDATE "searches" SET "query" = $1, "updated_at" = $2 WHERE "searches"."id" = $3[0m  [["query", "this is a test"], ["updated_at", "2023-04-11 19:48:14.097490"], ["id", 11]]
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%this is a test%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 1.3ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 2.3ms | Allocations: 1496)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 3.2ms | Allocations: 1735)
+Completed 200 OK in 32ms (Views: 3.9ms | ActiveRecord: 2.6ms | Allocations: 9812)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 21:48:16 +0200
+Processing by SearchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (1.3ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" GROUP BY "searches"."query" ORDER BY total DESC LIMIT $1[0m  [["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [11 times] (Duration: 1.5ms | Allocations: 421)
+  Rendered searches/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1560)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 95)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 4506)
+Completed 200 OK in 20ms (Views: 16.2ms | ActiveRecord: 1.3ms | Allocations: 5303)
+
+
+Started GET "/articles?query=this+is+not" for ::1 at 2023-04-11 21:48:22 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"this is not"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mSearch Update (0.9ms)[0m  [1m[33mUPDATE "searches" SET "query" = $1, "updated_at" = $2 WHERE "searches"."id" = $3[0m  [["query", "this is not"], ["updated_at", "2023-04-11 19:48:22.320689"], ["id", 11]]
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:22:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%this is not%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 2.4ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 3.4ms | Allocations: 1573)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 3.7ms | Allocations: 1669)
+Completed 200 OK in 17ms (Views: 3.7ms | ActiveRecord: 3.1ms | Allocations: 5297)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 21:48:25 +0200
+Processing by SearchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (1.0ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" GROUP BY "searches"."query" ORDER BY total DESC LIMIT $1[0m  [["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [11 times] (Duration: 0.4ms | Allocations: 212)
+  Rendered searches/index.html.erb within layouts/application (Duration: 14.6ms | Allocations: 1035)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 38.2ms | Allocations: 3861)
+Completed 200 OK in 43ms (Views: 39.1ms | ActiveRecord: 1.0ms | Allocations: 4177)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 21:50:21 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SearchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.7ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" GROUP BY "searches"."query" ORDER BY total DESC LIMIT $1[0m  [["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [11 times] (Duration: 0.4ms | Allocations: 458)
+  Rendered searches/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 6302)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 305)
+  Rendered layout layouts/application.html.erb (Duration: 34.2ms | Allocations: 55741)
+Completed 200 OK in 40ms (Views: 31.0ms | ActiveRecord: 4.4ms | Allocations: 60864)
+
+
+Started GET "/articles?query=this+is+not" for ::1 at 2023-04-11 21:50:22 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"this is not"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%this is not%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 25)
+  Rendered articles/_articles.html.erb (Duration: 2.3ms | Allocations: 999)
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2262)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 5190)
+Completed 200 OK in 38ms (Views: 8.7ms | ActiveRecord: 4.7ms | Allocations: 14597)
+
+
+Started GET "/articles?query=testing+this" for ::1 at 2023-04-11 21:50:27 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"testing this"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.6ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  [1m[36mSearch Create (0.8ms)[0m  [1m[32mINSERT INTO "searches" ("query", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["query", "testing this"], ["user_id", 1], ["created_at", "2023-04-11 19:50:27.056979"], ["updated_at", "2023-04-11 19:50:27.056979"]]
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%testing this%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 1.2ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 1.7ms | Allocations: 1496)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 2.5ms | Allocations: 1738)
+Completed 200 OK in 46ms (Views: 3.2ms | ActiveRecord: 3.3ms | Allocations: 9817)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 21:50:29 +0200
+Processing by SearchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (1.0ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" GROUP BY "searches"."query" ORDER BY total DESC LIMIT $1[0m  [["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [12 times] (Duration: 0.6ms | Allocations: 230)
+  Rendered searches/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1061)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 3959)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 1.0ms | Allocations: 4276)
+
+
+Started GET "/articles?query=second+test" for ::1 at 2023-04-11 21:50:38 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"second test"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  [1m[36mSearch Create (0.8ms)[0m  [1m[32mINSERT INTO "searches" ("query", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["query", "second test"], ["user_id", 1], ["created_at", "2023-04-11 19:50:38.230363"], ["updated_at", "2023-04-11 19:50:38.230363"]]
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%second test%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 2.8ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 4.0ms | Allocations: 1573)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.3ms | Allocations: 1669)
+Completed 200 OK in 18ms (Views: 4.6ms | ActiveRecord: 3.3ms | Allocations: 5295)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 21:50:40 +0200
+Processing by SearchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.8ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" GROUP BY "searches"."query" ORDER BY total DESC LIMIT $1[0m  [["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [13 times] (Duration: 0.7ms | Allocations: 248)
+  Rendered searches/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1081)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 3894)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.8ms | Allocations: 4203)
+
+
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Delete All (3.8ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mSearch Delete All (1.2ms)[0m  [1m[31mDELETE FROM "searches"[0m
+  [1m[36mUser Delete All (1.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+Started GET "/searches" for ::1 at 2023-04-11 21:53:15 +0200
+Processing by SearchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.9ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" GROUP BY "searches"."query" ORDER BY total DESC LIMIT $1[0m  [["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 14)
+  Rendered searches/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 697)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 3532)
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 0.9ms | Allocations: 3841)
+
+
+Started GET "/articles?query=second+test" for ::1 at 2023-04-11 21:53:17 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"second test"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("ip_address", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ip_address", "::1"], ["created_at", "2023-04-11 19:53:17.339842"], ["updated_at", "2023-04-11 19:53:17.339842"]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.6ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  [1m[36mSearch Create (1.0ms)[0m  [1m[32mINSERT INTO "searches" ("query", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["query", "second test"], ["user_id", 2], ["created_at", "2023-04-11 19:53:17.349132"], ["updated_at", "2023-04-11 19:53:17.349132"]]
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:20:in `save_query'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%second test%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 2.0ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1572)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 4387)
+Completed 200 OK in 39ms (Views: 9.1ms | ActiveRecord: 7.2ms | Allocations: 11344)
+
+
+Started GET "/articles?query=second+test" for ::1 at 2023-04-11 21:53:20 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"second test"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  [1m[36mSearch Load (0.6ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `save_query'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%second test%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 5.0ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1572)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 4381)
+Completed 200 OK in 22ms (Views: 11.9ms | ActiveRecord: 2.0ms | Allocations: 6119)
+
+
+Started GET "/articles" for ::1 at 2023-04-11 21:53:23 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `logged_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [18 times] (Duration: 1.1ms | Allocations: 414)
+  Rendered articles/_articles.html.erb (Duration: 12.7ms | Allocations: 3564)
+  Rendered articles/index.html.erb within layouts/application (Duration: 13.5ms | Allocations: 4378)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 7190)
+Completed 200 OK in 22ms (Views: 15.4ms | ActiveRecord: 4.0ms | Allocations: 8141)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 21:53:28 +0200
+Processing by SearchesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.8ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" GROUP BY "searches"."query" ORDER BY total DESC LIMIT $1[0m  [["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [1 times] (Duration: 0.2ms | Allocations: 31)
+  Rendered searches/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 764)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 3613)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 0.8ms | Allocations: 3923)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 22:00:52 +0200
+Processing by SearchesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.9ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" WHERE "searches"."user_id" = $1 GROUP BY "searches"."query" ORDER BY total DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [1 times] (Duration: 0.1ms | Allocations: 69)
+  Rendered searches/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1926)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 96)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 19495)
+Completed 200 OK in 36ms (Views: 8.8ms | ActiveRecord: 6.0ms | Allocations: 27306)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 22:00:54 +0200
+Processing by SearchesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.8ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" WHERE "searches"."user_id" = $1 GROUP BY "searches"."query" ORDER BY total DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [1 times] (Duration: 0.2ms | Allocations: 31)
+  Rendered searches/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 776)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 3607)
+Completed 200 OK in 15ms (Views: 9.1ms | ActiveRecord: 1.3ms | Allocations: 4616)
+
+
+Started GET "/articles" for ::1 at 2023-04-11 22:08:37 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 10.9ms | Allocations: 6151)
+
+
+  
+NoMethodError (undefined method `strip' for nil:NilClass):
+  
+app/controllers/articles_controller.rb:16:in `query_param'
+app/controllers/articles_controller.rb:5:in `index'
+Started GET "/articles" for ::1 at 2023-04-11 22:08:48 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [18 times] (Duration: 0.1ms | Allocations: 272)
+  Rendered articles/_articles.html.erb (Duration: 4.6ms | Allocations: 2459)
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 3269)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 20846)
+Completed 200 OK in 23ms (Views: 9.7ms | ActiveRecord: 9.7ms | Allocations: 25025)
+
+
+Started GET "/articles?query=future" for ::1 at 2023-04-11 22:08:57 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"future"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 1136)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/articles_controller.rb:23:in `save_query'
+app/controllers/articles_controller.rb:6:in `index'
+Started GET "/articles" for ::1 at 2023-04-11 22:10:05 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [18 times] (Duration: 0.1ms | Allocations: 272)
+  Rendered articles/_articles.html.erb (Duration: 3.6ms | Allocations: 2457)
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 3267)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 20848)
+Completed 200 OK in 18ms (Views: 9.2ms | ActiveRecord: 4.9ms | Allocations: 25001)
+
+
+Started GET "/articles?query=test" for ::1 at 2023-04-11 22:10:09 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"test"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms | Allocations: 1130)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/articles_controller.rb:23:in `save_query'
+app/controllers/articles_controller.rb:6:in `index'
+Started GET "/articles" for ::1 at 2023-04-11 22:10:24 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [18 times] (Duration: 0.2ms | Allocations: 272)
+  Rendered articles/_articles.html.erb (Duration: 4.1ms | Allocations: 2457)
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 3267)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 20838)
+Completed 200 OK in 17ms (Views: 8.2ms | ActiveRecord: 5.5ms | Allocations: 24989)
+
+
+Started GET "/articles?query=future" for ::1 at 2023-04-11 22:10:28 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"future"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.8ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:20:in `latest_search'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 5.3ms | Allocations: 5145)
+
+
+  
+NameError (undefined local variable or method `query' for #<ArticlesController:0x0000000001dfb0>):
+  
+app/controllers/articles_controller.rb:34:in `should_save_search_query?'
+app/controllers/articles_controller.rb:24:in `save_query'
+app/controllers/articles_controller.rb:6:in `index'
+Started GET "/articles" for ::1 at 2023-04-11 22:11:37 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [18 times] (Duration: 0.1ms | Allocations: 272)
+  Rendered articles/_articles.html.erb (Duration: 3.8ms | Allocations: 2457)
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 3267)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 20838)
+Completed 200 OK in 16ms (Views: 8.2ms | ActiveRecord: 5.2ms | Allocations: 24989)
+
+
+Started GET "/articles?query=future" for ::1 at 2023-04-11 22:11:41 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"future"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.3ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:20:in `latest_search'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:27:in `save_query'
+  [1m[36mSearch Create (1.2ms)[0m  [1m[32mINSERT INTO "searches" ("query", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["query", "future"], ["user_id", 2], ["created_at", "2023-04-11 20:11:41.855289"], ["updated_at", "2023-04-11 20:11:41.855289"]]
+  ↳ app/controllers/articles_controller.rb:27:in `save_query'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:27:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%future%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [2 times] (Duration: 0.2ms | Allocations: 39)
+  Rendered articles/_articles.html.erb (Duration: 2.7ms | Allocations: 849)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 3.7ms | Allocations: 1585)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 3.9ms | Allocations: 1681)
+Completed 200 OK in 33ms (Views: 4.0ms | ActiveRecord: 7.9ms | Allocations: 8812)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 22:11:45 +0200
+Processing by SearchesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (1.9ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" WHERE "searches"."user_id" = $1 GROUP BY "searches"."query" ORDER BY total DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [2 times] (Duration: 0.2ms | Allocations: 84)
+  Rendered searches/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 911)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 95)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 3855)
+Completed 200 OK in 17ms (Views: 9.8ms | ActiveRecord: 2.2ms | Allocations: 5225)
+
+
+Started GET "/articles?query=future+test" for ::1 at 2023-04-11 22:11:51 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"future test"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:20:in `latest_search'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.8ms | Allocations: 1918)
+
+
+  
+NameError (undefined local variable or method `query' for #<ArticlesController:0x00000000021d40>):
+  
+app/controllers/articles_controller.rb:29:in `save_query'
+app/controllers/articles_controller.rb:6:in `index'
+Started GET "/articles?query=future" for ::1 at 2023-04-11 22:12:04 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"future"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:20:in `latest_search'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%future%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [2 times] (Duration: 0.1ms | Allocations: 55)
+  Rendered articles/_articles.html.erb (Duration: 3.9ms | Allocations: 2072)
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2858)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 20414)
+Completed 200 OK in 22ms (Views: 7.7ms | ActiveRecord: 8.7ms | Allocations: 28631)
+
+
+Started GET "/articles?query=future+test" for ::1 at 2023-04-11 22:12:13 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"future test"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.7ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:20:in `latest_search'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:29:in `save_query'
+  [1m[36mSearch Update (1.2ms)[0m  [1m[33mUPDATE "searches" SET "query" = $1, "updated_at" = $2 WHERE "searches"."id" = $3[0m  [["query", "future test"], ["updated_at", "2023-04-11 20:12:13.869070"], ["id", 15]]
+  ↳ app/controllers/articles_controller.rb:29:in `save_query'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:29:in `save_query'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%future test%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 14)
+  Rendered articles/_articles.html.erb (Duration: 2.6ms | Allocations: 760)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 3.8ms | Allocations: 1573)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.0ms | Allocations: 1669)
+Completed 200 OK in 22ms (Views: 4.3ms | ActiveRecord: 3.7ms | Allocations: 5598)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 22:12:17 +0200
+Processing by SearchesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.7ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" WHERE "searches"."user_id" = $1 GROUP BY "searches"."query" ORDER BY total DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [2 times] (Duration: 0.2ms | Allocations: 84)
+  Rendered searches/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 911)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 95)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 3870)
+Completed 200 OK in 16ms (Views: 12.2ms | ActiveRecord: 0.9ms | Allocations: 5242)
+
+
+Started GET "/articles?query=future+test" for ::1 at 2023-04-11 22:14:38 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"future test"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:20:in `latest_search'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%future test%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 15)
+  Rendered articles/_articles.html.erb (Duration: 0.8ms | Allocations: 821)
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1607)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 19148)
+Completed 200 OK in 23ms (Views: 9.7ms | ActiveRecord: 6.4ms | Allocations: 27595)
+
+
+Started GET "/" for ::1 at 2023-04-11 22:14:44 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [18 times] (Duration: 0.5ms | Allocations: 271)
+  Rendered articles/_articles.html.erb (Duration: 8.4ms | Allocations: 2387)
+  Rendered articles/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 3201)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 6025)
+Completed 200 OK in 19ms (Views: 11.0ms | ActiveRecord: 4.0ms | Allocations: 6978)
+
+
+Started GET "/articles?query=test+article" for ::1 at 2023-04-11 22:14:48 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"test article"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:20:in `latest_search'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%test article%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 2.7ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 3.7ms | Allocations: 1572)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 3.9ms | Allocations: 1668)
+Completed 200 OK in 13ms (Views: 4.0ms | ActiveRecord: 1.6ms | Allocations: 3384)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 22:14:51 +0200
+Processing by SearchesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (1.0ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" WHERE "searches"."user_id" = $1 GROUP BY "searches"."query" ORDER BY total DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [2 times] (Duration: 0.2ms | Allocations: 84)
+  Rendered searches/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 911)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 95)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 3896)
+Completed 200 OK in 27ms (Views: 20.4ms | ActiveRecord: 1.3ms | Allocations: 5268)
+
+
+Started GET "/articles?query=test+article" for ::1 at 2023-04-11 22:15:24 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"test article"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:20:in `latest_search'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:25:in `save_search'
+  [1m[36mSearch Create (0.3ms)[0m  [1m[32mINSERT INTO "searches" ("query", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["query", "test article"], ["user_id", 2], ["created_at", "2023-04-11 20:15:24.878754"], ["updated_at", "2023-04-11 20:15:24.878754"]]
+  ↳ app/controllers/articles_controller.rb:25:in `save_search'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:25:in `save_search'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%test article%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 15)
+  Rendered articles/_articles.html.erb (Duration: 0.8ms | Allocations: 819)
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1605)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 19173)
+Completed 200 OK in 33ms (Views: 19.5ms | ActiveRecord: 6.7ms | Allocations: 29482)
+
+
+Started GET "/articles?query=testing+save" for ::1 at 2023-04-11 22:15:29 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"testing save"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:20:in `latest_search'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:27:in `save_search'
+  [1m[36mSearch Update (0.5ms)[0m  [1m[33mUPDATE "searches" SET "query" = $1, "updated_at" = $2 WHERE "searches"."id" = $3[0m  [["query", "testing save"], ["updated_at", "2023-04-11 20:15:29.295477"], ["id", 16]]
+  ↳ app/controllers/articles_controller.rb:27:in `save_search'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:27:in `save_search'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%testing save%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 1.5ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 2.7ms | Allocations: 1573)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 2.9ms | Allocations: 1669)
+Completed 200 OK in 28ms (Views: 3.0ms | ActiveRecord: 2.3ms | Allocations: 5328)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 22:15:31 +0200
+Processing by SearchesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.7ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" WHERE "searches"."user_id" = $1 GROUP BY "searches"."query" ORDER BY total DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [3 times] (Duration: 0.3ms | Allocations: 102)
+  Rendered searches/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 937)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 95)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 3923)
+Completed 200 OK in 18ms (Views: 12.6ms | ActiveRecord: 1.0ms | Allocations: 5292)
+
+
+Started GET "/articles?query=testing+save+if+works" for ::1 at 2023-04-11 22:15:36 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"testing save if works"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.6ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:20:in `latest_search'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:27:in `save_search'
+  [1m[36mSearch Update (0.9ms)[0m  [1m[33mUPDATE "searches" SET "query" = $1, "updated_at" = $2 WHERE "searches"."id" = $3[0m  [["query", "testing save if works"], ["updated_at", "2023-04-11 20:15:36.154806"], ["id", 16]]
+  ↳ app/controllers/articles_controller.rb:27:in `save_search'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:27:in `save_search'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%testing save if works%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 2.8ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 3.9ms | Allocations: 1572)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.2ms | Allocations: 1667)
+Completed 200 OK in 20ms (Views: 4.5ms | ActiveRecord: 3.4ms | Allocations: 5290)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 22:15:38 +0200
+Processing by SearchesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (1.0ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" WHERE "searches"."user_id" = $1 GROUP BY "searches"."query" ORDER BY total DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [3 times] (Duration: 0.3ms | Allocations: 68)
+  Rendered searches/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 830)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 3653)
+Completed 200 OK in 17ms (Views: 11.2ms | ActiveRecord: 1.3ms | Allocations: 4660)
+
+
+Started GET "/articles?query=second+second" for ::1 at 2023-04-11 22:15:46 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"second second"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:20:in `latest_search'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:25:in `save_search'
+  [1m[36mSearch Create (0.7ms)[0m  [1m[32mINSERT INTO "searches" ("query", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["query", "second second"], ["user_id", 2], ["created_at", "2023-04-11 20:15:46.400572"], ["updated_at", "2023-04-11 20:15:46.400572"]]
+  ↳ app/controllers/articles_controller.rb:25:in `save_search'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:25:in `save_search'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%second second%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 2.7ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 3.8ms | Allocations: 1572)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.0ms | Allocations: 1667)
+Completed 200 OK in 17ms (Views: 4.1ms | ActiveRecord: 2.8ms | Allocations: 5291)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 22:15:48 +0200
+Processing by SearchesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.8ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" WHERE "searches"."user_id" = $1 GROUP BY "searches"."query" ORDER BY total DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [4 times] (Duration: 0.3ms | Allocations: 86)
+  Rendered searches/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 856)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 3690)
+Completed 200 OK in 17ms (Views: 11.1ms | ActiveRecord: 1.1ms | Allocations: 4697)
+
+
+Started GET "/articles?query=second+second" for ::1 at 2023-04-11 22:24:29 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"second second"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 11.4ms | Allocations: 6640)
+
+
+  
+SyntaxError (/Users/edisipka/Desktop/search_data_analytics/app/models/search.rb:12: syntax error, unexpected ->, expecting `end' or dummy end
+...e :latest_search_for, (user) -> { where(user: user).order(cr...
+...                             ^~
+):
+  
+app/models/search.rb:12: syntax error, unexpected ->, expecting `end' or dummy end
+app/models/search.rb:12: syntax error, unexpected ->, expecting `end' or dummy end
+app/models/search.rb:12: syntax error, unexpected ->, expecting `end' or dummy end
+app/controllers/articles_controller.rb:21:in `latest_search'
+app/controllers/articles_controller.rb:34:in `valid_search_request?'
+app/controllers/articles_controller.rb:6:in `index'
+Started GET "/articles?query=second+second" for ::1 at 2023-04-11 22:24:59 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"second second"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/search.rb:12:in `block in <class:Search>'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%second second%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 15)
+  Rendered articles/_articles.html.erb (Duration: 1.0ms | Allocations: 819)
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1605)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 19157)
+Completed 200 OK in 23ms (Views: 7.9ms | ActiveRecord: 8.7ms | Allocations: 26898)
+
+
+Started GET "/articles?query=emir" for ::1 at 2023-04-11 22:25:04 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"emir"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.6ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/search.rb:12:in `block in <class:Search>'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:26:in `save_search'
+  [1m[36mSearch Create (1.4ms)[0m  [1m[32mINSERT INTO "searches" ("query", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["query", "emir"], ["user_id", 2], ["created_at", "2023-04-11 20:25:04.632401"], ["updated_at", "2023-04-11 20:25:04.632401"]]
+  ↳ app/controllers/articles_controller.rb:26:in `save_search'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:26:in `save_search'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%emir%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 2.6ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 3.8ms | Allocations: 1572)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.0ms | Allocations: 1668)
+Completed 200 OK in 22ms (Views: 4.3ms | ActiveRecord: 4.3ms | Allocations: 5404)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 22:25:06 +0200
+Processing by SearchesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.8ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" WHERE "searches"."user_id" = $1 GROUP BY "searches"."query" ORDER BY total DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [5 times] (Duration: 0.2ms | Allocations: 139)
+  Rendered searches/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 952)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 95)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3923)
+Completed 200 OK in 16ms (Views: 7.4ms | ActiveRecord: 1.3ms | Allocations: 5267)
+
+
+Started GET "/" for ::1 at 2023-04-11 22:25:12 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [18 times] (Duration: 0.7ms | Allocations: 271)
+  Rendered articles/_articles.html.erb (Duration: 12.0ms | Allocations: 2408)
+  Rendered articles/index.html.erb within layouts/application (Duration: 13.5ms | Allocations: 3222)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 6054)
+Completed 200 OK in 25ms (Views: 16.5ms | ActiveRecord: 4.4ms | Allocations: 7007)
+
+
+Started GET "/articles?query=grass+is+green" for ::1 at 2023-04-11 22:25:18 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"grass is green"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/search.rb:12:in `block in <class:Search>'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:26:in `save_search'
+  [1m[36mSearch Create (0.9ms)[0m  [1m[32mINSERT INTO "searches" ("query", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["query", "grass is green"], ["user_id", 2], ["created_at", "2023-04-11 20:25:18.822339"], ["updated_at", "2023-04-11 20:25:18.822339"]]
+  ↳ app/controllers/articles_controller.rb:26:in `save_search'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:26:in `save_search'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%grass is green%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 3.0ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 5.3ms | Allocations: 1572)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 5.5ms | Allocations: 1667)
+Completed 200 OK in 19ms (Views: 5.7ms | ActiveRecord: 3.2ms | Allocations: 5202)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 22:25:20 +0200
+Processing by SearchesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.8ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" WHERE "searches"."user_id" = $1 GROUP BY "searches"."query" ORDER BY total DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [6 times] (Duration: 0.4ms | Allocations: 122)
+  Rendered searches/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 908)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 3748)
+Completed 200 OK in 18ms (Views: 11.6ms | ActiveRecord: 1.1ms | Allocations: 4757)
+
+
+Started GET "/" for ::1 at 2023-04-11 22:26:02 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [18 times] (Duration: 0.4ms | Allocations: 256)
+  Rendered articles/_articles.html.erb (Duration: 3.5ms | Allocations: 1223)
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2036)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 4851)
+Completed 200 OK in 14ms (Views: 10.3ms | ActiveRecord: 0.7ms | Allocations: 5801)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 22:27:22 +0200
+Processing by SearchesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.8ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" WHERE "searches"."user_id" = $1 GROUP BY "searches"."query" ORDER BY total DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [6 times] (Duration: 0.4ms | Allocations: 122)
+  Rendered searches/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 908)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 3748)
+Completed 200 OK in 17ms (Views: 12.9ms | ActiveRecord: 1.4ms | Allocations: 4757)
+
+
+Started GET "/" for ::1 at 2023-04-11 22:28:27 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [18 times] (Duration: 0.4ms | Allocations: 256)
+  Rendered articles/_articles.html.erb (Duration: 2.3ms | Allocations: 1223)
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2036)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 4842)
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 0.4ms | Allocations: 5792)
+
+
+Started GET "/articles?query=asklmdmklas" for ::1 at 2023-04-11 22:28:32 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"asklmdmklas"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/search.rb:12:in `block in <class:Search>'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:26:in `save_search'
+  [1m[36mSearch Create (0.5ms)[0m  [1m[32mINSERT INTO "searches" ("query", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["query", "asklmdmklas"], ["user_id", 2], ["created_at", "2023-04-11 20:28:32.342916"], ["updated_at", "2023-04-11 20:28:32.342916"]]
+  ↳ app/controllers/articles_controller.rb:26:in `save_search'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:26:in `save_search'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%asklmdmklas%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 2.6ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 3.6ms | Allocations: 1573)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 3.9ms | Allocations: 1668)
+Completed 200 OK in 17ms (Views: 4.0ms | ActiveRecord: 2.7ms | Allocations: 5203)
+
+
+Started GET "/" for ::1 at 2023-04-11 22:28:42 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [18 times] (Duration: 0.7ms | Allocations: 256)
+  Rendered articles/_articles.html.erb (Duration: 3.1ms | Allocations: 1223)
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2036)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4849)
+Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 0.6ms | Allocations: 5797)
+
+
+Started GET "/" for ::1 at 2023-04-11 22:29:12 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [18 times] (Duration: 1.1ms | Allocations: 392)
+  Rendered articles/_articles.html.erb (Duration: 4.7ms | Allocations: 1597)
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2753)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 6068)
+Completed 200 OK in 23ms (Views: 16.9ms | ActiveRecord: 0.8ms | Allocations: 7500)
+
+
+Started GET "/articles?query=test" for ::1 at 2023-04-11 22:29:15 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"test"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/search.rb:12:in `block in <class:Search>'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:26:in `save_search'
+  [1m[36mSearch Create (0.8ms)[0m  [1m[32mINSERT INTO "searches" ("query", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["query", "test"], ["user_id", 2], ["created_at", "2023-04-11 20:29:15.345480"], ["updated_at", "2023-04-11 20:29:15.345480"]]
+  ↳ app/controllers/articles_controller.rb:26:in `save_search'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:26:in `save_search'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%test%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 1.7ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 3.3ms | Allocations: 1590)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.4ms | Allocations: 1825)
+Completed 200 OK in 25ms (Views: 5.3ms | ActiveRecord: 3.1ms | Allocations: 5537)
+
+
+Started GET "/articles?query=test" for ::1 at 2023-04-11 22:29:28 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"test"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (1.3ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/search.rb:12:in `block in <class:Search>'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%test%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 4.0ms | Allocations: 908)
+  Rendered articles/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2034)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 5416)
+Completed 200 OK in 33ms (Views: 20.7ms | ActiveRecord: 2.6ms | Allocations: 7559)
+
+
+Started GET "/" for ::1 at 2023-04-11 22:29:31 +0200
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 18]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [18 times] (Duration: 1.7ms | Allocations: 392)
+  Rendered articles/_articles.html.erb (Duration: 4.7ms | Allocations: 1448)
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 2261)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 5052)
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 0.6ms | Allocations: 6001)
+
+
+Started GET "/articles?query=test" for ::1 at 2023-04-11 22:29:35 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"test"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.3ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/search.rb:12:in `block in <class:Search>'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%test%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 1.5ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 2.3ms | Allocations: 1572)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 3.0ms | Allocations: 1804)
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 0.9ms | Allocations: 3606)
+
+
+Started GET "/articles?query=test" for ::1 at 2023-04-11 22:47:14 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"test"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/search.rb:12:in `block in <class:Search>'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%test%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 15)
+  Rendered articles/_articles.html.erb (Duration: 1.4ms | Allocations: 960)
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2018)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 220)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 20047)
+Completed 200 OK in 74ms (Views: 15.5ms | ActiveRecord: 8.2ms | Allocations: 30517)
+
+
+Started GET "/articles?query=test" for ::1 at 2023-04-11 22:47:14 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"test"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/search.rb:12:in `block in <class:Search>'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%test%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 2.9ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1573)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 4410)
+Completed 200 OK in 51ms (Views: 9.1ms | ActiveRecord: 2.0ms | Allocations: 6071)
+
+
+Started GET "/" for ::1 at 2023-04-11 22:47:16 +0200
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [20 times] (Duration: 1.9ms | Allocations: 429)
+  Rendered articles/_articles.html.erb (Duration: 9.3ms | Allocations: 2479)
+  Rendered articles/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 3292)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 6089)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.3ms | Allocations: 6384)
+
+
+Started GET "/articles?query=Urban+revolution" for ::1 at 2023-04-11 22:47:23 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"Urban revolution"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/search.rb:12:in `block in <class:Search>'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:24:in `save_search'
+  [1m[36mSearch Create (2.1ms)[0m  [1m[32mINSERT INTO "searches" ("query", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["query", "Urban revolution"], ["user_id", 2], ["created_at", "2023-04-11 20:47:23.658654"], ["updated_at", "2023-04-11 20:47:23.658654"]]
+  ↳ app/controllers/articles_controller.rb:24:in `save_search'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:24:in `save_search'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%Urban revolution%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 2.2ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 3.1ms | Allocations: 1572)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.3ms | Allocations: 1804)
+Completed 200 OK in 25ms (Views: 5.7ms | ActiveRecord: 5.8ms | Allocations: 5711)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 22:47:25 +0200
+Processing by SearchesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (1.2ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" WHERE "searches"."user_id" = $1 GROUP BY "searches"."query" ORDER BY total DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [9 times] (Duration: 1.5ms | Allocations: 343)
+  Rendered searches/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1379)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 95)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 4329)
+Completed 200 OK in 21ms (Views: 14.4ms | ActiveRecord: 1.7ms | Allocations: 5742)
+
+
+Started GET "/" for ::1 at 2023-04-11 22:47:27 +0200
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [20 times] (Duration: 0.4ms | Allocations: 284)
+  Rendered articles/_articles.html.erb (Duration: 3.5ms | Allocations: 1275)
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2088)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 4904)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.4ms | Allocations: 5196)
+
+
+Started GET "/articles?query=Gener" for ::1 at 2023-04-11 22:47:34 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"Gener"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/search.rb:12:in `block in <class:Search>'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:24:in `save_search'
+  [1m[36mSearch Create (0.9ms)[0m  [1m[32mINSERT INTO "searches" ("query", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["query", "Gener"], ["user_id", 2], ["created_at", "2023-04-11 20:47:34.575097"], ["updated_at", "2023-04-11 20:47:34.575097"]]
+  ↳ app/controllers/articles_controller.rb:24:in `save_search'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:24:in `save_search'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%Gener%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [1 times] (Duration: 0.2ms | Allocations: 27)
+  Rendered articles/_articles.html.erb (Duration: 3.0ms | Allocations: 825)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 4.1ms | Allocations: 1639)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.3ms | Allocations: 1734)
+Completed 200 OK in 20ms (Views: 4.5ms | ActiveRecord: 3.4ms | Allocations: 5269)
+
+
+Started GET "/articles?query=Gener" for ::1 at 2023-04-11 22:48:08 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"Gener"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/search.rb:12:in `block in <class:Search>'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%Gener%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [1 times] (Duration: 0.1ms | Allocations: 27)
+  Rendered articles/_articles.html.erb (Duration: 2.7ms | Allocations: 825)
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1638)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 83.6ms | Allocations: 24484)
+Completed 200 OK in 92ms (Views: 83.8ms | ActiveRecord: 1.7ms | Allocations: 26141)
+
+
+Started GET "/" for ::1 at 2023-04-11 22:48:10 +0200
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [20 times] (Duration: 0.7ms | Allocations: 284)
+  Rendered articles/_articles.html.erb (Duration: 5.2ms | Allocations: 1275)
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2089)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 4895)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.4ms | Allocations: 5187)
+
+
+Started GET "/articles?query=T" for ::1 at 2023-04-11 22:48:12 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"T"}
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (1.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%T%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [17 times] (Duration: 0.6ms | Allocations: 244)
+  Rendered articles/_articles.html.erb (Duration: 5.9ms | Allocations: 1206)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 6.9ms | Allocations: 2019)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 7.2ms | Allocations: 2114)
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 1.9ms | Allocations: 2402)
+
+
+Started GET "/articles?query=Te" for ::1 at 2023-04-11 22:48:13 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"Te"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/search.rb:12:in `block in <class:Search>'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%Te%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [6 times] (Duration: 0.3ms | Allocations: 93)
+  Rendered articles/_articles.html.erb (Duration: 3.6ms | Allocations: 944)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 4.6ms | Allocations: 1680)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.9ms | Allocations: 1775)
+Completed 200 OK in 14ms (Views: 5.1ms | ActiveRecord: 1.4ms | Allocations: 3978)
+
+
+Started GET "/articles?query=Tec" for ::1 at 2023-04-11 22:48:14 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"Tec"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/search.rb:12:in `block in <class:Search>'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:24:in `save_search'
+  [1m[36mSearch Create (0.8ms)[0m  [1m[32mINSERT INTO "searches" ("query", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["query", "Tec"], ["user_id", 2], ["created_at", "2023-04-11 20:48:14.567425"], ["updated_at", "2023-04-11 20:48:14.567425"]]
+  ↳ app/controllers/articles_controller.rb:24:in `save_search'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:24:in `save_search'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%Tec%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [5 times] (Duration: 0.3ms | Allocations: 80)
+  Rendered articles/_articles.html.erb (Duration: 3.4ms | Allocations: 919)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 4.3ms | Allocations: 1732)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.5ms | Allocations: 1827)
+Completed 200 OK in 21ms (Views: 4.6ms | ActiveRecord: 3.0ms | Allocations: 5360)
+
+
+Started GET "/articles?query=Tech" for ::1 at 2023-04-11 22:48:15 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"Tech"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.3ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/search.rb:12:in `block in <class:Search>'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:26:in `save_search'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:26:in `save_search'
+  [1m[36mSearch Update (1.0ms)[0m  [1m[33mUPDATE "searches" SET "query" = $1, "updated_at" = $2 WHERE "searches"."id" = $3[0m  [["query", "Tech"], ["updated_at", "2023-04-11 20:48:15.490679"], ["id", 24]]
+  ↳ app/controllers/articles_controller.rb:26:in `save_search'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:26:in `save_search'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%Tech%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [3 times] (Duration: 0.2ms | Allocations: 53)
+  Rendered articles/_articles.html.erb (Duration: 2.9ms | Allocations: 872)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 4.0ms | Allocations: 1608)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.2ms | Allocations: 1703)
+Completed 200 OK in 23ms (Views: 4.5ms | ActiveRecord: 3.7ms | Allocations: 7289)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 22:48:17 +0200
+Processing by SearchesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.7ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" WHERE "searches"."user_id" = $1 GROUP BY "searches"."query" ORDER BY total DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [11 times] (Duration: 0.5ms | Allocations: 213)
+  Rendered searches/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1042)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 3877)
+Completed 200 OK in 13ms (Views: 9.2ms | ActiveRecord: 0.9ms | Allocations: 4882)
+
+
+Started GET "/" for ::1 at 2023-04-11 22:48:20 +0200
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [20 times] (Duration: 0.4ms | Allocations: 284)
+  Rendered articles/_articles.html.erb (Duration: 4.0ms | Allocations: 1275)
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2088)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4891)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.3ms | Allocations: 5182)
+
+
+Started GET "/articles?query=Tech+is+the+b" for ::1 at 2023-04-11 22:48:25 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"query"=>"Tech is the b"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = $1 ORDER BY "searches"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/search.rb:12:in `block in <class:Search>'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:26:in `save_search'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:26:in `save_search'
+  [1m[36mSearch Update (0.7ms)[0m  [1m[33mUPDATE "searches" SET "query" = $1, "updated_at" = $2 WHERE "searches"."id" = $3[0m  [["query", "Tech is the b"], ["updated_at", "2023-04-11 20:48:25.591345"], ["id", 24]]
+  ↳ app/controllers/articles_controller.rb:26:in `save_search'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:26:in `save_search'
+  Rendering layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering articles/index.html.erb within layouts/turbo_rails/frame
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (title ILIKE '%Tech is the b%') LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered articles/_articles.html.erb (Duration: 1.6ms | Allocations: 759)
+  Rendered articles/index.html.erb within layouts/turbo_rails/frame (Duration: 2.3ms | Allocations: 1573)
+  Rendered layout /Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 2.5ms | Allocations: 1668)
+Completed 200 OK in 26ms (Views: 2.5ms | ActiveRecord: 3.5ms | Allocations: 6264)
+
+
+Started GET "/searches" for ::1 at 2023-04-11 22:48:26 +0200
+Processing by SearchesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."ip_address" = $1 LIMIT $2[0m  [["ip_address", "::1"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.6ms)[0m  [1m[34mSELECT query, COUNT(*) as total FROM "searches" WHERE "searches"."user_id" = $1 GROUP BY "searches"."query" ORDER BY total DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 30]]
+  ↳ app/views/searches/index.html.erb:3
+  Rendered collection of searches/_search.html.erb [11 times] (Duration: 0.4ms | Allocations: 213)
+  Rendered searches/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1042)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 3912)
+Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 0.8ms | Allocations: 4918)
+
+
+Started GET "/" for ::1 at 2023-04-11 22:48:31 +0200
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [20 times] (Duration: 1.0ms | Allocations: 284)
+  Rendered articles/_articles.html.erb (Duration: 3.8ms | Allocations: 1275)
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2088)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4923)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.3ms | Allocations: 5215)
+
+
+Started GET "/" for ::1 at 2023-04-11 22:48:35 +0200
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [20 times] (Duration: 0.7ms | Allocations: 284)
+  Rendered articles/_articles.html.erb (Duration: 5.8ms | Allocations: 1275)
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2088)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 4900)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.5ms | Allocations: 5189)
+
+
+Started GET "/" for ::1 at 2023-04-11 22:48:36 +0200
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/views/articles/_articles.html.erb:2
+  Rendered collection of articles/_article.html.erb [20 times] (Duration: 0.6ms | Allocations: 284)
+  Rendered articles/_articles.html.erb (Duration: 4.5ms | Allocations: 1275)
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2089)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 4883)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.4ms | Allocations: 5173)
+
+

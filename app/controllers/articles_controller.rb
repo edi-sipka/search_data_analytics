@@ -1,29 +1,39 @@
-class ArticlesController < ApplicationController
-    before_action :logged_user
-  
+class ArticlesController < ApplicationController  
     def index
-      if params[:query].present?
-        save_query(params[:query])
-        @articles = Article.search_by_title(params[:query]).limit(50)
+      if query_param.present?
+        save_search if valid_search_request?
+
+        @articles = Article.search_by_title(query_param).limit(50)
       else
-        @articles = Article.default_limit
+        @articles = Article.limit(20)
       end
     end
   
     private
+
+    def query_param
+      params[:query]&.strip
+    end
+
+    def latest_search
+      @latest_search ||= Search.latest_search_for(current_user)
+    end
   
-    def save_query(query)
-      recent_query = @logged_user.searches.order(created_at: :desc).first
-      return unless should_save_search_query?(query, recent_query)
-  
-      if recent_query.nil? || !related_article(recent_query.query, query)
-        Search.create(query: query, user: @logged_user)
+    def save_search
+      if latest_search.nil? || !related_article(latest_search.query, query_param)
+        Search.create(query: query_param.strip, user: current_user)
       else
-        recent_query.update(query: query)
+        latest_search.update(query: query_param)
       end
     end
   
-    def should_save_search_query?(query, recent_query)
-      query.present? && query.length >= 5 && (recent_query.nil? || !recent_query.query.include?(query) || recent_query.query.length < query.length)
+    def valid_search_request?
+      query_param.length >= 2 && (latest_search.nil? || !latest_search.query.include?(query_param) || latest_search.query.length < query_param.length)
+    end
+
+    def related_article(str1, str2)
+      jarow = FuzzyStringMatch::JaroWinkler.create(:native)
+      distance = jarow.getDistance(str1, str2)
+      distance > 0.8
     end
   end
