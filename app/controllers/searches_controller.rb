@@ -1,5 +1,5 @@
 class SearchesController < ApplicationController
     def index
-        @searches = Search.all
+      @searches = Search.search_count_descending.limit(30)
     end
   end

@@ -1,3 +1,9 @@
 <div>
   <%= render "articles", articles: @articles %>
 </div>
+<div>
+  <% @articles.present? %>
+    <% @articles.each do |article| %>
+      <%= article.title %>
+    <% end %>
+</div>

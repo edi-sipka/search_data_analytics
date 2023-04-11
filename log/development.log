@@ -182,3 +182,177 @@ FOREIGN KEY ("user_id")
   [1m[36mArticle Create (0.2ms)[0m  [1m[32mINSERT INTO "articles" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Generation of Technology"], ["created_at", "2023-04-10 14:54:58.612913"], ["updated_at", "2023-04-10 14:54:58.612913"]]
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+Started GET "/" for 127.0.0.1 at 2023-04-10 23:41:29 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1856)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 1958)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.0ms | Allocations: 5802)
+
+
+  
+ActionView::Template::Error (Missing partial articles/_articles, application/_articles with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/edisipka/Desktop/search_data_analytics/app/views"
+  * "/Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views"
+  * "/Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/actiontext-7.0.4.3/app/views"
+  * "/Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/actionmailbox-7.0.4.3/app/views"
+):
+    1: <div>
+    2:   <%= render "articles", articles: @articles %>
+    3: </div>
+  
+app/views/articles/index.html.erb:2
+Started GET "/" for 127.0.0.1 at 2023-04-10 23:42:05 +0200
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (5.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:2
+  Rendered articles/index.html.erb within layouts/application (Duration: 30.3ms | Allocations: 16127)
+  Rendered layout layouts/application.html.erb (Duration: 30.4ms | Allocations: 16216)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 12.9ms | Allocations: 16953)
+
+
+  
+ActionView::Template::Error (Missing partial articles/_article with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/edisipka/Desktop/search_data_analytics/app/views"
+  * "/Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views"
+  * "/Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/actiontext-7.0.4.3/app/views"
+  * "/Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/actionmailbox-7.0.4.3/app/views"
+):
+    1: <div>
+    2:   <%= render @articles %>
+    3: </div>
+  
+app/views/articles/index.html.erb:2
+Started GET "/" for 127.0.0.1 at 2023-04-10 23:42:06 +0200
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:2
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1885)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 1972)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.6ms | Allocations: 2219)
+
+
+  
+ActionView::Template::Error (Missing partial articles/_article with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/edisipka/Desktop/search_data_analytics/app/views"
+  * "/Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views"
+  * "/Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/actiontext-7.0.4.3/app/views"
+  * "/Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/actionmailbox-7.0.4.3/app/views"
+):
+    1: <div>
+    2:   <%= render @articles %>
+    3: </div>
+  
+app/views/articles/index.html.erb:2
+Started GET "/" for 127.0.0.1 at 2023-04-10 23:42:07 +0200
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:2
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1892)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 1980)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.4ms | Allocations: 2232)
+
+
+  
+ActionView::Template::Error (Missing partial articles/_article with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/edisipka/Desktop/search_data_analytics/app/views"
+  * "/Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views"
+  * "/Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/actiontext-7.0.4.3/app/views"
+  * "/Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/actionmailbox-7.0.4.3/app/views"
+):
+    1: <div>
+    2:   <%= render @articles %>
+    3: </div>
+  
+app/views/articles/index.html.erb:2
+Started GET "/" for 127.0.0.1 at 2023-04-10 23:42:08 +0200
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:2
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1892)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 1980)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.5ms | Allocations: 2232)
+
+
+  
+ActionView::Template::Error (Missing partial articles/_article with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/edisipka/Desktop/search_data_analytics/app/views"
+  * "/Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views"
+  * "/Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/actiontext-7.0.4.3/app/views"
+  * "/Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/actionmailbox-7.0.4.3/app/views"
+):
+    1: <div>
+    2:   <%= render @articles %>
+    3: </div>
+  
+app/views/articles/index.html.erb:2
+Started GET "/" for 127.0.0.1 at 2023-04-10 23:42:08 +0200
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:2
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1892)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 1980)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms | Allocations: 2232)
+
+
+  
+ActionView::Template::Error (Missing partial articles/_article with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/edisipka/Desktop/search_data_analytics/app/views"
+  * "/Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views"
+  * "/Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/actiontext-7.0.4.3/app/views"
+  * "/Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/actionmailbox-7.0.4.3/app/views"
+):
+    1: <div>
+    2:   <%= render @articles %>
+    3: </div>
+  
+app/views/articles/index.html.erb:2
+Started GET "/" for 127.0.0.1 at 2023-04-10 23:42:09 +0200
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:2
+  Rendered articles/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 1885)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 1972)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.8ms | Allocations: 2217)
+
+
+  
+ActionView::Template::Error (Missing partial articles/_article with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/edisipka/Desktop/search_data_analytics/app/views"
+  * "/Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/turbo-rails-1.4.0/app/views"
+  * "/Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/actiontext-7.0.4.3/app/views"
+  * "/Users/edisipka/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/actionmailbox-7.0.4.3/app/views"
+):
+    1: <div>
+    2:   <%= render @articles %>
+    3: </div>
+  
+app/views/articles/index.html.erb:2
