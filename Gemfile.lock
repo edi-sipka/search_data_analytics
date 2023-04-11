@@ -101,6 +101,7 @@ GEM
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
     io-console (0.6.0)
+    ionicons-rails (2.0.0)
     irb (1.6.4)
       reline (>= 0.3.0)
     jbuilder (2.11.5)
@@ -222,6 +223,7 @@ DEPENDENCIES
   debug
   fuzzy-string-match
   importmap-rails
+  ionicons-rails
   jbuilder
   pg (~> 1.1)
   puma (~> 5.0)

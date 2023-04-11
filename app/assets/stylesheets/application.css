@@ -12,7 +12,10 @@
  *
  *= require_tree .
  *= require_self
- */
+
+  */
+
+ @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
 
  * {
     padding: 0;
@@ -21,12 +24,13 @@
   }
 
   body {
-    font-family: "Lato", sans-serif;
+    font-family: 'Mukta', sans-serif;
   }
 
   .navbar {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 100vw;
     background-color: #fff;
     box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
@@ -36,11 +40,12 @@
   }
 
   .navbar-logo {
-    color: #348fff;
+    color: #464141;
     text-decoration: none;
     font-size: 25px;
     padding: 0px 20px;
-  }
+    font-weight: 500;
+}
 
   .menu{
     display: flex;
@@ -53,12 +58,12 @@
   
   .navbar-links li a {
     display: block;
-    text-decoration: none;
-    color: #444;
     padding: 20px 20px;
-    font-weight: 500;
-    font-size: 18px;
-    transition: 0.4s all;
+    font-size: 16px;
+    font-weight: 400;
+    color: #868686;
+    text-decoration: none;
+    transition: .3s ease;
   }
   
   .navbar-links li.navbar-dropdown {
@@ -69,60 +74,83 @@
     color: #349aff;
   }
   
-  .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 90vh;
-    background-size: cover;
-  }
-  
   .header-inner {
     text-align: center;
-    color: #348fff;
+    color: #ffffff;
+    padding: 74px;
+    background: linear-gradient(30deg, #1c3a7d 0%, #2a65e8 86%);
+    color: #fff;
+    text-align: center;
   }
   
   .header-inner h1 {
-    font-family: "Great Vibes", cursive;
-    font-size: 130px;
+    font-size: 60px;
+    font-weight: 500;
   }
 
   .search-bar{
-    margin: 30px 0 30px 0;
-    width: 40%;
-    border: 2px solid #b8b8b8;
-    padding: 5px;
-    font-size: 16px;
-    height: 40px;
-    font-family: "Lato", cursive;
-    border-radius: 10px;
+    width: 50%;
+    margin-top: 20px;
+    height: 60px;
+    padding: 0 16px 0 60px;
+    background: #fff;
     outline: none;
-    color: #b8b8b8;
+    border-radius: 8px;
+    font-family: 'Mukta', sans-serif;
+    font-size: 24px;
+    color: #747474;
+    border: 3px solid transparent;
+    transition: border .3s ease;
+  }
+  .search-bar::placeholder {
+    color: #bababa;
+    font-weight: 200;
   }
   
   .search-bar:focus{
     color: #2f2f2f;
   }
 
-  .heading-articles{
-    margin-top: 40px;
-    color: #348fff;
-  }
-  
-  .articles{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 40px;
-    color: black;
-    box-shadow: none;
+  .search-bar-with-icon {
+    padding-left: 60px;
+    background-image: url(https://assets.stickpng.com/images/585e4ae1cb11b227491c3393.png);
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    background-position: left 20px center;
   }
 
-  .article{
-    flex-basis: calc(33.33% - 10px);
-    margin-bottom: 25px; 
+  .heading-articles{
+    margin-top: 40px;
+    margin-left: 30px;
+    color: #2f2f2f;
+    font-size: 32px;
   }
+  .heading-articles::before {
+    content: "";
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/011/999/958/non_2x/fire-icon-free-png.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+
+
+.articles-grid {
+  display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.article {
+  position: relative;
+  padding-left: 24px; 
+}
+
 
 .search-data{
     margin-top: 40px;
@@ -131,21 +159,22 @@
     align-items: center;
 }
 
-    .table-row {
-      background-color: #ffffff;
-      box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
-      color: rgb(113, 113, 113);
-      list-style: none;
-      font-size: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 15px;
-    }
-    .col-1 {
-      flex-basis: 90%;
-    }
-    .col-2 {
-      flex-basis: 10%;
-    }
-  
+.table-row {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+    color: rgb(113, 113, 113);
+    list-style: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+   }
+
+.col-1 {
+    flex-basis: 90%;
+  }
+   
+ .col-2 {
+    flex-basis: 10%;
+  }
