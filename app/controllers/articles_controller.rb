@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
       recent_query = @logged_user.searches.order(created_at: :desc).first
       return unless should_save_search_query?(query, recent_query)
   
-      if recent_query.nil? 
+      if recent_query.nil? || !related_article(recent_query.query, query)
         Search.create(query: query, user: @logged_user)
       else
         recent_query.update(query: query)
