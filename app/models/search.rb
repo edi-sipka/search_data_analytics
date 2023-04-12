@@ -9,5 +9,5 @@ class Search < ApplicationRecord
       .order('total DESC')
   }
 
-  scope :latest_search_for, -> (user) { where(user: user).order(created_at: :desc).first }
+  scope :in_descending_order_by, -> (user) { where(user: user).order(created_at: :desc) }
 end

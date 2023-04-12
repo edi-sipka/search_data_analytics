@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
     end
 
     def latest_search
-      @latest_search ||= Search.latest_search_for(current_user)
+      @latest_search ||= Search.in_descending_order_by(current_user).first
     end
   
     def save_search
