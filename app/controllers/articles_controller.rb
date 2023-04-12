@@ -28,7 +28,7 @@ class ArticlesController < ApplicationController
     end
   
     def valid_search_request?
-      return true unless latest_seach.present?
+      return true unless latest_search.present?
       query_param.length >= 2 && (latest_search.nil? || !latest_search.query.include?(query_param) || latest_search.query.length < query_param.length)
     end
 
