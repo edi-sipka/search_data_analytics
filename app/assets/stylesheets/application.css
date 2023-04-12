@@ -200,3 +200,30 @@
   justify-content: center;
   align-items: center;
 }
+
+@media(max-width: 480px) {
+  .navbar{
+    padding: 1px
+  }
+
+  .header-inner h1{
+    font-size: 40px;
+  }
+  .search-bar{
+    width: 100%;
+  }
+  .search-bar-with-icon {
+    padding-left: 60px;
+    background-image: url(https://www.pngkit.com/png/full/26-269603_search-magnifying-glass-icon-png-grey.png);
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    background-position: left 20px center;
+  }
+  .heading-article{
+    margin-left: 1.5rem;
+  }
+.table-row{
+  width: 80%;
+}
+
+}
