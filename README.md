@@ -33,7 +33,7 @@ SimpleSearch is a web application built using Ruby on Rails framework that allow
 
 ## 🚀 Live Version <a name="live-demo"></a>
 
-- [SimpleSearch App]()
+- [SimpleSearch App](https://thawing-crag-54617.herokuapp.com/)
 
 <br>
 
