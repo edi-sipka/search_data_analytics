@@ -72,8 +72,8 @@ To get a local copy up and running follow these simple steps:
 - Run `rails s` to start the server.
 - Run `rspec` to run tests
 
-
+<hr>
 
 <p align="center">
-  <strong>Enjoy the game!</strong> ❤️
+  <strong>SimpleSearch App</strong> 
 </p>
