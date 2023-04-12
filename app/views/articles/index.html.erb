@@ -5,14 +5,14 @@
       <div class="search-bar-container">
         <%= form.text_field :query, autocomplete: :off, data: { action: "input->search-form#search" }, class:'search-bar search-bar-with-icon', placeholder:'Search articles...' %>
       </div>
+        <h3 class='popular-topics'><strong>Popular topics:</strong> Green Living, Future Tech, Urban Evolution.</h3>
     <% end %>
   </div>
+
   <div class='articles-container'>
     <h2 class='heading-articles'> List of articles </h2>
-    <div class='articles'>
-      <div class="column">
+      <div class="articles">
         <%= render "articles", articles: @articles %>
-      </div>
     </div>
   </div>
 </header>

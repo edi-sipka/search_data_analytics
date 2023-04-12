@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
 
         @articles = Article.search_by_title(query_param).limit(50)
       else
-        @articles = Article.limit(20)
+        @articles = Article.limit(9)
       end
     end
   
