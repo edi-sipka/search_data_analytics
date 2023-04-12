@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
     end
   
     def save_search
-      if latest_search.nil? || !related_article(latest_search.query, query_param)
+      if latest_search.blank? || !related_article(latest_search&.query, query_param)
         Search.create(query: query_param.strip, user: current_user)
       else
         latest_search.update(query: query_param)
@@ -28,6 +28,7 @@ class ArticlesController < ApplicationController
     end
   
     def valid_search_request?
+      return true unless latest_seach.present?
       query_param.length >= 2 && (latest_search.nil? || !latest_search.query.include?(query_param) || latest_search.query.length < query_param.length)
     end
 
